@@ -1,0 +1,4 @@
+#!/bin/bash
+LOG="$HOME/Library/Application Support/PostureCoach/run.log"
+mkdir -p "$HOME/Library/Application Support/PostureCoach"
+exec "/opt/homebrew/bin/python3" "/Applications/PostureCoach.app/Contents/Resources/posture_coach.py" >> "$LOG" 2>&1
