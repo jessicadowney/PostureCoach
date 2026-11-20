@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T00:00:00Z",
+  "title": "Design System: PostureCoach",
+  "extensions": {
+    "colorMeta": {
+      "hot-pink": { "role": "primary", "displayName": "Hot Pink", "canonical": "#ff2d95", "tonalRamp": ["#3d0a26", "#6b0f43", "#99155f", "#cc1e7c", "#ff2d95", "#ff6db3", "#ffa3cf", "#ffd6e9"] },
+      "acid-yellow": { "role": "secondary", "displayName": "Acid Yellow", "canonical": "#e6ff00", "tonalRamp": ["#2e3300", "#596600", "#859900", "#b3cc00", "#e6ff00", "#eeff59", "#f5ff99", "#fbffd1"] },
+      "electric-cyan": { "role": "tertiary", "displayName": "Electric Cyan", "canonical": "#00e1ff", "tonalRamp": ["#00303a", "#005a6b", "#008499", "#00b4cc", "#00e1ff", "#59ebff", "#99f2ff", "#d1f9ff"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#120a0f", "tonalRamp": ["#120a0f", "#2a1d25", "#45343f", "#63505c", "#84707d", "#a8949f", "#cdbbc6", "#f1e6ee"] },
+      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff", "tonalRamp": ["#ffffff"] },
+      "terminal-black": { "role": "neutral", "displayName": "Terminal Black", "canonical": "#07040a", "tonalRamp": ["#07040a"] },
+      "blush-text": { "role": "neutral", "displayName": "Blush Text", "canonical": "#f1e6ee", "tonalRamp": ["#f1e6ee"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero 'Stand up!' only, skewed and stacked." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles inside a skewed span." },
+      "title": { "displayName": "Title", "purpose": "Move cards, nag heading, FAQ summaries." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs at 30 to 62ch." },
+      "label": { "displayName": "Label", "purpose": "Nav links, timer menu row, stage tags, copy button." },
+      "code": { "displayName": "Code", "purpose": "Install commands." }
+    },
+    "shadows": [
+      { "name": "lift", "value": "6px 8px 14px rgba(18,10,15,.4)", "purpose": "Primary button at rest; 8px 12px 18px on hover, 3px 4px 8px pressed." },
+      { "name": "badge", "value": "10px 14px 24px rgba(18,10,15,.35)", "purpose": "Tilted timer badge." },
+      { "name": "headline-cast", "value": "5px 5px 18px rgba(18,10,15,.35)", "purpose": "White hero headline over pink." }
+    ],
+    "motion": [
+      { "name": "snap", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "Button hover/press (0.15s) and timer jolt (0.5s)." },
+      { "name": "jolt", "value": "0.5s: scale .94 skewX(4deg) to 1.04 to 1", "purpose": "Timer badge on each phase change; disabled under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Skewed ink slab with yellow shout text; the one install action.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Get your workout</a>",
+      "css": ".ds-btn{display:inline-block;background:#120a0f;color:#e6ff00;padding:16px 30px;font:900 italic 1.1rem/1 Anybody,sans-serif;text-transform:uppercase;text-decoration:none;transform:skewX(-8deg);box-shadow:6px 8px 14px rgba(18,10,15,.4);transition:transform .15s cubic-bezier(.2,.8,.2,1),box-shadow .15s}.ds-btn:hover{transform:skewX(-8deg) translate(-2px,-3px);box-shadow:8px 12px 18px rgba(18,10,15,.45)}.ds-btn:active{transform:skewX(-8deg) translate(2px,3px);box-shadow:3px 4px 8px rgba(18,10,15,.4)}.ds-btn:focus-visible{outline:4px solid #120a0f;outline-offset:3px}"
+    },
+    {
+      "name": "Alt Button",
+      "kind": "button",
+      "refersTo": "button-alt",
+      "description": "Outlined sibling for secondary actions.",
+      "html": "<a class=\"ds-btn-alt\" href=\"#\">See the code</a>",
+      "css": ".ds-btn-alt{display:inline-block;background:transparent;color:#120a0f;border:3px solid #120a0f;padding:16px 30px;font:900 italic 1.1rem/1 Anybody,sans-serif;text-transform:uppercase;text-decoration:none;transform:skewX(-8deg);transition:transform .15s cubic-bezier(.2,.8,.2,1)}.ds-btn-alt:hover{transform:skewX(-8deg) translate(-2px,-3px)}.ds-btn-alt:focus-visible{outline:4px solid #120a0f;outline-offset:3px}"
+    },
+    {
+      "name": "Timer Badge",
+      "kind": "custom",
+      "refersTo": "timer-badge",
+      "description": "Tilted yellow live-demo card: phase, clock, coach shout.",
+      "html": "<div class=\"ds-timer\"><div class=\"ds-menu\"><span>PostureCoach</span><span>Demo, sped up</span></div><p class=\"ds-phase\">Stand</p><div class=\"ds-clock\">17:00</div><p class=\"ds-shout\">Up! Up! Up! Your chair is not your friend.</p></div>",
+      "css": ".ds-timer{background:#e6ff00;color:#120a0f;padding:26px 24px 22px;transform:rotate(-2.5deg);box-shadow:10px 14px 24px rgba(18,10,15,.35);max-width:360px}.ds-menu{display:flex;justify-content:space-between;font:700 .8rem/1 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;padding-bottom:12px;border-bottom:3px solid #120a0f}.ds-phase{font:900 italic 3.6rem/.95 Anybody,sans-serif;text-transform:uppercase;margin:16px 0 0}.ds-clock{font:900 italic 2.6rem/1 Anybody,sans-serif;font-variant-numeric:tabular-nums;color:#ff2d95;-webkit-text-stroke:2px #120a0f;paint-order:stroke fill}.ds-shout{font-weight:800;margin:12px 0 0}"
+    },
+    {
+      "name": "Set Row",
+      "kind": "custom",
+      "description": "Thick-ruled class row: huge italic title, small sub-line, plain note.",
+      "html": "<div class=\"ds-set\"><div class=\"ds-big\">Stand<small>about 17 min</small></div><p>Up on your feet.</p></div>",
+      "css": ".ds-set{display:grid;grid-template-columns:1.3fr 1fr;gap:8px 28px;align-items:baseline;border-top:6px solid #120a0f;padding:18px 0 22px;background:#e6ff00;color:#120a0f}.ds-big{font:900 italic 4rem/.95 Anybody,sans-serif;text-transform:uppercase}.ds-big small{font-size:1.6rem;display:block;letter-spacing:.02em}.ds-set p{margin:0;font-weight:700;max-width:30ch}"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "Cyan-on-black install command with copy button.",
+      "html": "<div class=\"ds-code\">bash \"Install PostureCoach.command\"<button type=\"button\" class=\"ds-copy\">copy</button></div>",
+      "css": ".ds-code{position:relative;background:#07040a;border:3px solid #00e1ff;color:#00e1ff;padding:16px 96px 16px 16px;font:600 15px/1.5 ui-monospace,Menlo,monospace;overflow-x:auto;white-space:pre}.ds-copy{position:absolute;top:10px;right:10px;background:#00e1ff;color:#120a0f;border:0;padding:6px 12px;cursor:pointer;font:800 12px/1 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.06em}.ds-copy:hover{background:#e6ff00}.ds-copy:focus-visible{outline:4px solid #e6ff00;outline-offset:3px}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "description": "Uppercase label link with thick underline on hover.",
+      "html": "<a class=\"ds-nav\" href=\"#\">The moves</a>",
+      "css": ".ds-nav{font:700 .85rem 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:#120a0f}.ds-nav:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px}.ds-nav:focus-visible{outline:4px solid #120a0f;outline-offset:3px}"
+    },
+    {
+      "name": "Nag Panel",
+      "kind": "card",
+      "refersTo": "nag-panel",
+      "description": "Tilted ink panel with a yellow title and pink-ruled stages.",
+      "html": "<div class=\"ds-nag\"><h3>It nags. It really nags.</h3><div class=\"ds-stage\"><b>8 min</b>You really should switch now.</div></div>",
+      "css": ".ds-nag{background:#120a0f;color:#fff;padding:28px 24px 26px;transform:rotate(1deg);max-width:420px}.ds-nag h3{font:900 italic 1.9rem/1 Anybody,sans-serif;text-transform:uppercase;margin:0 0 14px;color:#e6ff00}.ds-stage{border-top:4px solid #ff2d95;padding-top:10px;font-size:.95rem}.ds-stage b{display:block;color:#00e1ff;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instructor With a Whistle",
+    "overview": "The page is a 1982 aerobics class and the app is the instructor shouting the set list. Every section is a field drenched in one neon, set in extra-wide italic caps, with hard ink rules and skewed shapes that lean forward like a body mid-lunge. It is loud on purpose and it refuses the calm teal wellness-app page.\n\nDensity is generous at the section level (56px top, 96px bottom padding per field) and tight inside it: big type, short lines, one idea per row. Energy comes from slant (skewX -8deg), tilt (rotate -2.5deg and 1deg) and diagonal stripe bands, never from glow or haze.\n\nThe build diverges from the contract in one place: ink is a near-black warm brown-violet (#120a0f), not a clear deep violet. The prose follows the build.",
+    "keyCharacteristics": [
+      "Four flat colour fields (pink, yellow, cyan, ink), no gradients except the tri-colour stripe band.",
+      "One display face, all caps, italic, weight 900, skewed.",
+      "Square corners everywhere; thick ink rules (3 to 6px) as the structural line.",
+      "Soft drop shadows only under lifted, tilted objects (button, timer badge).",
+      "Live demo timer is the hero proof; copy is coach-voice, shouted."
+    ],
+    "rules": [
+      { "name": "The One Neon Per Field Rule", "body": "A section is drenched in exactly one of pink, yellow or cyan, with ink text. Never put two neons side by side as text and ground; neons meet only at the stripe bands.", "section": "colors" },
+      { "name": "The Ink Text Rule", "body": "Text on a neon field is ink. On ink it is white, blush, or a neon heading. White on neon is reserved for the oversized hero headline.", "section": "colors" },
+      { "name": "The Shout Rule", "body": "Anything set in Anybody is italic, caps, weight 900. No upright or light cuts of the display face.", "section": "typography" },
+      { "name": "The Lifted-Object Rule", "body": "Shadows go under tilted or skewed objects only. Flat fields, rules and text blocks stay shadowless.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do drench each section in one neon (#ff2d95, #e6ff00 or #00e1ff) with ink (#120a0f) text.",
+      "Do set display type in Anybody 900 italic caps and skew headlines -8deg.",
+      "Do keep corners square and draw structure with 3 to 6px ink rules.",
+      "Do join fields with the tri-colour stripe band, flipping its order on alternate joins.",
+      "Do keep focus rings 4px: ink on neon, yellow on ink.",
+      "Do write copy in a shouting coach voice, and keep real facts real.",
+      "Do honour prefers-reduced-motion by stopping the demo loop, jolt and button transitions."
+    ],
+    "donts": [
+      "Don't add glow, haze, synthwave grids or suns; the world is flat Day-Glo, not neon-sign.",
+      "Don't round corners or soften buttons into pills.",
+      "Don't set text in Anybody upright or light, or in lowercase.",
+      "Don't put shadows under flat fields or text blocks.",
+      "Don't reach for calm teal or white wellness-app surfaces."
+    ]
+  }
+}
