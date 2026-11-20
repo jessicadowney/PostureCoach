@@ -58,7 +58,7 @@ nav a:not(.brand):hover{text-decoration:underline;text-decoration-thickness:3px;
 .stage{position:relative;min-height:470px}
 .coach{display:block;width:min(100%,400px);margin-left:auto;margin-right:-30px}
 .scene{display:block;width:100%;max-width:270px}
-.timer{position:absolute;left:-4%;bottom:14px;width:min(50%,235px);background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:18px 18px 14px;transform:rotate(-3deg);box-shadow:8px 12px 22px rgba(42,22,50,.28)}
+.timer{position:absolute;left:-13%;bottom:2px;width:min(50%,235px);background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:18px 18px 14px;transform:rotate(-3deg);box-shadow:8px 12px 22px rgba(42,22,50,.28)}
 .timer.jolt{animation:jolt .5s cubic-bezier(.2,.8,.2,1)}
 @keyframes jolt{0%{transform:rotate(-2.5deg) scale(.94) skewX(4deg)}60%{transform:rotate(-2.5deg) scale(1.04)}100%{transform:rotate(-2.5deg) scale(1)}}
 .timer .menu{display:flex;justify-content:space-between;font:700 .8rem/1 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;padding-bottom:12px;border-bottom:3px solid var(--ink)}
@@ -146,32 +146,40 @@ footer a{color:var(--sun)}
 <a class="btn" href="#install">Get your workout</a><a class="btn alt" href="https://github.com/jessicadowney/PostureCoach">See the code</a>
 </div>
 <div class="stage">
-<svg class="coach" viewBox="0 0 300 340" role="img" aria-label="Illustration of a cheerful coach in a high-cut leotard, tights, leg warmers and headband, one arm raised">
+<svg class="coach" viewBox="0 0 300 340" role="img" aria-label="Illustration of a cheerful coach in a high-cut leotard, tights, leg warmers and headband, one arm raised and a hand on her hip">
 <circle cx="150" cy="186" r="148" fill="#f5c23e"/>
 <circle cx="150" cy="186" r="142" fill="none" stroke="#17757a" stroke-width="7" stroke-dasharray="2 14" stroke-linecap="round"/>
+<ellipse cx="150" cy="327" rx="74" ry="6" fill="#2a1632" opacity=".18"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path d="M126 114 92 148 122 172" stroke="#c98660" stroke-width="18"/>
-<path d="M134 196 126 262 120 304" stroke="#ef6a50" stroke-width="23"/>
-<path d="M166 196 176 260 184 304" stroke="#ef6a50" stroke-width="23"/>
-<path d="M124 272 121 296" stroke="#17757a" stroke-width="31"/>
-<path d="M179 272 183 296" stroke="#17757a" stroke-width="31"/>
-<path d="M106 281h30M105 292h30M164 281h30M165 292h30" stroke="#fff3e0" stroke-width="4"/>
-<path d="M104 311h36M170 311h38" stroke="#fff3e0" stroke-width="14"/>
+<path d="M126 120 98 150" stroke="#c98660" stroke-width="15"/><path d="M98 150 124 176" stroke="#c98660" stroke-width="13"/>
+<path d="M138 192 124 246" stroke="#ef6a50" stroke-width="27"/><path d="M124 246 118 300" stroke="#ef6a50" stroke-width="19"/>
+<path d="M164 192 176 244" stroke="#ef6a50" stroke-width="27"/><path d="M176 244 173 300" stroke="#ef6a50" stroke-width="19"/>
+<path d="M122 262 119 292" stroke="#17757a" stroke-width="30"/><path d="M175 262 174 292" stroke="#17757a" stroke-width="30"/>
+<path d="M105 270q14 5 28 0M104 280q14 5 28 0M104 290q14 5 28 0M160 270q14 5 28 0M160 280q14 5 28 0M160 290q14 5 28 0" stroke="#fff3e0" stroke-width="3.5"/>
 </g>
-<path d="M120 108Q150 98 180 108L174 152Q184 178 192 198L150 214 108 198Q116 178 126 152Z" fill="#17757a"/>
-<path d="M127 152Q150 162 173 152" fill="none" stroke="#fff3e0" stroke-width="4" stroke-linecap="round"/>
+<path d="M98 306Q110 297 128 302L141 309Q147 319 138 321H98Q92 314 98 306Z" fill="#fff3e0"/><path d="M96 322H142" stroke="#2a1632" stroke-width="4" stroke-linecap="round"/>
+<path d="M156 306Q168 297 186 302L199 309Q205 319 196 321H156Q150 314 156 306Z" fill="#fff3e0"/><path d="M154 322H200" stroke="#2a1632" stroke-width="4" stroke-linecap="round"/>
+<path d="M104 307 120 304M162 307 178 304" stroke="#ef6a50" stroke-width="4" stroke-linecap="round"/>
+<path d="M121 114Q150 104 179 114L171 158Q161 166 150 166Q139 166 129 158Z" fill="#17757a"/>
+<path d="M130 158Q119 174 125 188Q141 186 150 206Q159 186 175 188Q181 174 170 158Q150 168 130 158Z" fill="#17757a"/>
+<path d="M139 106 150 134 161 106Z" fill="#c98660"/>
+<path d="M128 156Q150 166 172 156" fill="none" stroke="#fff3e0" stroke-width="4" stroke-linecap="round"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path d="M176 116 214 88 228 46" stroke="#c98660" stroke-width="18"/>
-<path d="M216 66 238 74" stroke="#2a1632" stroke-width="8"/>
+<path d="M176 120 206 94" stroke="#c98660" stroke-width="15"/><path d="M206 94 217 48" stroke="#c98660" stroke-width="13"/>
+<path d="M208 70 226 76" stroke="#fff3e0" stroke-width="9"/><path d="M209 70 226 76" stroke="#ef6a50" stroke-width="3.5"/>
+<path d="M240 52 252 46M244 66 258 64M240 80 252 84" stroke="#2a1632" stroke-width="4"/>
 </g>
-<circle cx="228" cy="40" r="11" fill="#c98660"/><circle cx="122" cy="174" r="10" fill="#c98660"/>
-<circle cx="126" cy="62" r="20" fill="#2a1632"/><circle cx="174" cy="62" r="20" fill="#2a1632"/><circle cx="150" cy="48" r="26" fill="#2a1632"/>
-<path d="M150 82V106" stroke="#c98660" stroke-width="15"/>
-<circle cx="150" cy="78" r="27" fill="#c98660"/>
-<path d="M124 70Q150 55 176 70" fill="none" stroke="#ef6a50" stroke-width="10" stroke-linecap="round"/>
-<path d="M124 70Q150 55 176 70" fill="none" stroke="#fff3e0" stroke-width="3" stroke-linecap="round"/>
-<circle cx="140" cy="82" r="2.8" fill="#2a1632"/><circle cx="160" cy="82" r="2.8" fill="#2a1632"/>
-<path d="M138 91Q150 102 162 91" fill="none" stroke="#2a1632" stroke-width="3.6" stroke-linecap="round"/>
+<circle cx="218" cy="42" r="10" fill="#c98660"/><circle cx="124" cy="177" r="9" fill="#c98660"/>
+<path d="M116 76C98 52 112 20 150 18C188 20 202 52 184 76C192 92 178 100 170 94L130 94C122 100 108 92 116 76Z" fill="#2a1632"/>
+<path d="M122 44Q136 28 158 31M170 36Q186 42 188 58M114 64Q112 54 118 46" fill="none" stroke="#5a3466" stroke-width="4" stroke-linecap="round"/>
+<path d="M150 90V112" stroke="#c98660" stroke-width="16"/>
+<ellipse cx="150" cy="72" rx="22" ry="26" fill="#c98660"/>
+<path d="M128 62Q150 51 172 62" fill="none" stroke="#fff3e0" stroke-width="11" stroke-linecap="round"/>
+<path d="M128 62Q150 51 172 62" fill="none" stroke="#ef6a50" stroke-width="5" stroke-linecap="round"/>
+<circle cx="138" cy="86" r="5" fill="#ef6a50" opacity=".45"/><circle cx="162" cy="86" r="5" fill="#ef6a50" opacity=".45"/>
+<path d="M135 70Q140 66 145 69M155 69Q160 66 165 70" fill="none" stroke="#2a1632" stroke-width="3" stroke-linecap="round"/>
+<circle cx="140" cy="75" r="3" fill="#2a1632"/><circle cx="160" cy="75" r="3" fill="#2a1632"/><circle cx="141" cy="74" r="1" fill="#fff3e0"/><circle cx="161" cy="74" r="1" fill="#fff3e0"/>
+<path d="M139 83Q150 98 161 83Z" fill="#2a1632"/><path d="M142 84Q150 88 158 84" fill="none" stroke="#fff3e0" stroke-width="3" stroke-linecap="round"/>
 </svg>
 <div class="timer" id="timer" role="img" aria-label="Demo of the PostureCoach countdown cycling through sit, stand and walk phases">
 <div class="menu"><span>Demo, sped up</span></div>
