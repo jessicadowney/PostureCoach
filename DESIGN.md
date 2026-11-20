@@ -111,7 +111,7 @@ Density is generous at the section level (56px top, 96px bottom padding per fiel
 The build keeps one cooler-than-brand detail: the code block fill (#1c0e22) is a one-off darker plum.
 
 **Key Characteristics:**
-- Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the walk bar).
+- Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the stretch bar).
 - One display face, all caps, italic, weight 900, skewed.
 - Geometric graphic devices in the page palette: the striped sunflower disc and the cadence bars. Flat fills, no outlines, no soft gradients.
 - Square corners everywhere except one soft 18px paper timer card; 3 to 6px plum rules as the structural line.
@@ -122,7 +122,7 @@ The build keeps one cooler-than-brand detail: the code block fill (#1c0e22) is a
 Warm, sun-baked flats on plum ink, one field colour per section.
 
 ### Primary
-- **Coral** (#ef6a50): hero and FAQ fields, the theme colour, step numerals and nag-stage rules on ink, stripe seams, the cut-stripes of the hero disc, the dashed walk bar.
+- **Coral** (#ef6a50): hero and FAQ fields, the theme colour, step numerals and nag-stage rules on ink, stripe seams, the cut-stripes of the hero disc, the dashed stretch bar.
 - **Sunflower** (#f5c23e): the "Today's class" field, primary button text, headings, links, code borders and copy button on ink, the hero disc, the logo badge.
 - **Deep Teal** (#17757a): the "moves" field (white text), the timer clock digits, stripe seams, the dotted ring on the hero disc, the stand bar.
 
@@ -148,7 +148,7 @@ Warm, sun-baked flats on plum ink, one field colour per section.
 ### Hierarchy
 - **Display** (900 italic caps, clamp(3.6rem, 12vw, 9rem), 0.92): the hero "Stand up!" only, each line skewed and stacked.
 - **Headline** (900 italic caps, clamp(2.4rem, 7vw, 4.6rem), 0.92, -0.02em): section titles, always inside a skewed span.
-- **Set Title** (900 italic caps, clamp(2.6rem, 9vw, 6rem), 0.95): the Sit / Stand / Walk rows, with a smaller sub-line (clamp 1rem to 1.6rem).
+- **Set Title** (900 italic caps, clamp(2.4rem, 6.6vw, 4.6rem), 0.95): the Sit / Stand / Stretch rows, with a smaller sub-line (clamp 1rem to 1.6rem).
 - **Title** (900 italic caps, 1.7rem to 1.9rem, 1): move cards, nag heading; FAQ summaries at 1.25rem.
 - **Body** (500, 18px, 1.55): paragraphs at 30 to 62ch; lede is 1.3rem at weight 700, 34ch.
 - **Label** (700 to 800 caps, 0.8 to 0.85rem, 0.06 to 0.08em): nav links, timer menu row, nag stage tags, copy button.
@@ -192,7 +192,7 @@ Paper card, 18px corners, 3px plum border, tilted -3deg with the Card shadow, ce
 Decorative hero backdrop, hidden from assistive tech: a sunflower circle with four coral cut-stripes across its lower half and a dotted deep-teal ring just inside the rim. Palette only, flat fills, no shadow. Hidden at 760px and below so the timer stays in the first screen.
 
 ### Cadence Bars
-Each set row leads with a 46px bar skewed -8deg, hidden from assistive tech, sized to the default cadence against the full column: Sit is a full-width plum bar (35 min), Stand is a 49% deep-teal bar (17 min), Walk is a full-width run of coral stripes (14px on, 14px off), a dashed line for the hourly reminder. A new set type gets a new bar proportional to its minutes, in a palette colour.
+Each set row leads with a 46px bar skewed -8deg, hidden from assistive tech, sized to the default cadence against the full column: Sit is a full-width plum bar (35 min), Stand is a 49% deep-teal bar (17 min), Stretch is a full-width run of coral stripes (14px on, 14px off), a dashed line for the hourly reminder. A new set type gets a new bar proportional to its minutes, in a palette colour.
 
 ### Code Blocks
 Code Plum fill, 3px sunflower border, paper 15px monospace, no radius, horizontal scroll. A sunflower copy button sits top-right (uppercase 12px label, paper on hover), label flips to "copied".

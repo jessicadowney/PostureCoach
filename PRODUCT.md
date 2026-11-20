@@ -16,7 +16,7 @@ Friends and colleagues of the author, shared by link. Desk workers managing lowe
 
 ## Product Purpose
 
-PostureCoach is a macOS menu bar app that nudges the user through a sit / stand / walk cadence to help manage lower back pain, with periodic ergonomics reminders. Success: a visitor understands it in one scroll and installs it.
+PostureCoach is a macOS menu bar app that nudges the user through a sit / stand / stretch cadence to help manage lower back pain, with periodic ergonomics reminders. Success: a visitor understands it in one scroll and installs it.
 
 ## Positioning
 
@@ -24,7 +24,7 @@ Lives only in the menu bar (no Dock icon) and stays quiet during Microsoft Teams
 
 ## Operating Context
 
-Install is `git clone`, move `PostureCoach.app` to /Applications, run `Install PostureCoach.command` (installs `rumps`, registers a launchd LaunchAgent). Requires macOS 10.13+ and Python 3. Default cadence: sit ~35 min, stand ~17 min (10 in pain mode), walk or stretch hourly.
+Install is `git clone`, move `PostureCoach.app` to /Applications, run `Install PostureCoach.command` (installs `rumps`, registers a launchd LaunchAgent). Requires macOS 10.13+ and Python 3. Default cadence: sit ~35 min, stand ~17 min (10 in pain mode), stretch hourly.
 
 ## Capabilities and Constraints
 

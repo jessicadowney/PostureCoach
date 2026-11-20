@@ -181,9 +181,9 @@
     {
       "name": "Cadence Bars",
       "kind": "custom",
-      "description": "Skewed bars sized to the default cadence: 35 min sit in plum, 17 min stand in teal, hourly walk as dashed coral stripes.",
-      "html": "<div class=\"ds-bars\"><div class=\"ds-bar ds-sit\"></div><div class=\"ds-bar ds-stand\"></div><div class=\"ds-bar ds-walk\"></div></div>",
-      "css": ".ds-bars{display:grid;gap:14px;background:#f5c23e;padding:18px;max-width:270px}.ds-bar{height:46px;transform:skewX(-8deg)}.ds-sit{width:100%;background:#2a1632}.ds-stand{width:49%;background:#17757a}.ds-walk{width:100%;background:repeating-linear-gradient(90deg,#ef6a50 0 14px,transparent 14px 28px)}"
+      "description": "Skewed bars sized to the default cadence: 35 min sit in plum, 17 min stand in teal, hourly stretch as dashed coral stripes.",
+      "html": "<div class=\"ds-bars\"><div class=\"ds-bar ds-sit\"></div><div class=\"ds-bar ds-stand\"></div><div class=\"ds-bar ds-stretch\"></div></div>",
+      "css": ".ds-bars{display:grid;gap:14px;background:#f5c23e;padding:18px;max-width:270px}.ds-bar{height:46px;transform:skewX(-8deg)}.ds-sit{width:100%;background:#2a1632}.ds-stand{width:49%;background:#17757a}.ds-stretch{width:100%;background:repeating-linear-gradient(90deg,#ef6a50 0 14px,transparent 14px 28px)}"
     },
     {
       "name": "Sunflower Disc",
@@ -220,7 +220,7 @@
     "northStar": "The Instructor With a Whistle",
     "overview": "The page is a 1982 aerobics class redrawn as a flat picture book, and the app is the instructor shouting the set list. Each section is a field of one warm colour (coral, sunflower or deep teal), set in extra-wide italic caps, with hard plum rules and skewed type that leans forward like a body mid-lunge. Pure graphic devices carry the story instead of effects: a retro sunflower disc cut with coral stripes behind the live timer, and skewed bars in the set list whose lengths are the real cadence. It is loud but friendly, and it refuses the calm teal wellness-app page and the neon-sign page.\n\nDensity is generous at the section level (56px top, 96px bottom padding per field) and tight inside it: big type, short lines, one idea per row. Energy comes from slant (skewX -8deg), tilt (rotate -3deg and 1deg) and diagonal tri-stripe seams, never from glow or haze.\n\nThe build keeps one cooler-than-brand detail: the code block fill (#1c0e22) is a one-off darker plum.",
     "keyCharacteristics": [
-      "Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the walk bar).",
+      "Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the stretch bar).",
       "One display face, all caps, italic, weight 900, skewed.",
       "Geometric graphic devices in the page palette: the striped sunflower disc and the cadence bars. Flat fills, no outlines, no soft gradients.",
       "Square corners everywhere except one soft 18px paper timer card; 3 to 6px plum rules as the structural line.",
