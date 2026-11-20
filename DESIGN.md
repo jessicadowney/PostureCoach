@@ -69,6 +69,18 @@ components:
     textColor: "{colors.plum-ink}"
     rounded: "{rounded.card}"
     padding: "18px 18px 14px"
+  sunflower-disc:
+    backgroundColor: "{colors.sunflower}"
+    rounded: "{rounded.card}"
+    width: "430px"
+  cadence-bar-sit:
+    backgroundColor: "{colors.plum-ink}"
+    rounded: "{rounded.none}"
+    height: "46px"
+  cadence-bar-stand:
+    backgroundColor: "{colors.deep-teal}"
+    rounded: "{rounded.none}"
+    height: "46px"
   code-block:
     backgroundColor: "{colors.code-plum}"
     textColor: "{colors.paper}"
@@ -92,16 +104,16 @@ components:
 
 **Creative North Star: "The Instructor With a Whistle"**
 
-The page is a 1982 aerobics class redrawn as a flat picture book, and the app is the instructor shouting the set list. Each section is a field of one warm colour (coral, sunflower or deep teal), set in extra-wide italic caps, with hard plum rules and skewed type that leans forward like a body mid-lunge. Authored flat SVG figures (a coach in leg warmers, and sit / stand / walk scenes) carry the story instead of effects. It is loud but friendly, and it refuses the calm teal wellness-app page and the neon-sign page.
+The page is a 1982 aerobics class redrawn as a flat picture book, and the app is the instructor shouting the set list. Each section is a field of one warm colour (coral, sunflower or deep teal), set in extra-wide italic caps, with hard plum rules and skewed type that leans forward like a body mid-lunge. Pure graphic devices carry the story instead of effects: a retro sunflower disc cut with coral stripes behind the live timer, and skewed bars in the set list whose lengths are the real cadence. It is loud but friendly, and it refuses the calm teal wellness-app page and the neon-sign page.
 
 Density is generous at the section level (56px top, 96px bottom padding per field) and tight inside it: big type, short lines, one idea per row. Energy comes from slant (skewX -8deg), tilt (rotate -3deg and 1deg) and diagonal tri-stripe seams, never from glow or haze.
 
-The build keeps a few cooler-than-brand details: the code block fill (#1c0e22) is a one-off darker plum and the illustration skin tones (#c98660, #f0c4a0, #8d5a3b) live only inside the SVGs.
+The build keeps one cooler-than-brand detail: the code block fill (#1c0e22) is a one-off darker plum.
 
 **Key Characteristics:**
-- Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; no gradients except the tri-stripe seam.
+- Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the walk bar).
 - One display face, all caps, italic, weight 900, skewed.
-- Hand-drawn-feel flat SVG illustration: round-capped strokes, flat fills, no outlines or gradients, drawn from the page palette.
+- Geometric graphic devices in the page palette: the striped sunflower disc and the cadence bars. Flat fills, no outlines, no soft gradients.
 - Square corners everywhere except one soft 18px paper timer card; 3 to 6px plum rules as the structural line.
 - Live demo timer is the hero proof; copy is coach-voice, shouted.
 
@@ -110,13 +122,13 @@ The build keeps a few cooler-than-brand details: the code block fill (#1c0e22) i
 Warm, sun-baked flats on plum ink, one field colour per section.
 
 ### Primary
-- **Coral** (#ef6a50): hero and FAQ fields, the theme colour, step numerals and nag-stage rules on ink, stripe seams, shirts and headbands in the illustrations.
-- **Sunflower** (#f5c23e): the "Today's class" field, primary button text, headings, links, code borders and copy button on ink, the logo badge, leg-warmer stripes.
-- **Deep Teal** (#17757a): the "moves" field (white text), the timer clock digits, stripe seams, leotard and tops in the illustrations.
+- **Coral** (#ef6a50): hero and FAQ fields, the theme colour, step numerals and nag-stage rules on ink, stripe seams, the cut-stripes of the hero disc, the dashed walk bar.
+- **Sunflower** (#f5c23e): the "Today's class" field, primary button text, headings, links, code borders and copy button on ink, the hero disc, the logo badge.
+- **Deep Teal** (#17757a): the "moves" field (white text), the timer clock digits, stripe seams, the dotted ring on the hero disc, the stand bar.
 
 ### Neutral
-- **Plum Ink** (#2a1632): all text on coral and sunflower, button fill, rules, outlines, the install and footer field, scrollbar track, illustration lines and hair.
-- **Paper** (#fff3e0): the timer card, the second hero headline line (with a plum stroke), secondary copy on ink, nag stage labels, code text, shoes and screens in the illustrations.
+- **Plum Ink** (#2a1632): all text on coral and sunflower, button fill, rules, outlines, the sit bar, the logo "P", the install and footer field, scrollbar track.
+- **Paper** (#fff3e0): the timer card, the second hero headline line (with a plum stroke), secondary copy on ink, nag stage labels, code text, the third stripe of the nag cap.
 - **White** (#ffffff): body text on teal and on ink.
 - **Code Plum** (#1c0e22): code block fill only.
 
@@ -146,25 +158,24 @@ Warm, sun-baked flats on plum ink, one field colour per section.
 
 ## Layout
 
-Single column inside a 1040px wrapper with 16px side gutters. Sections are full-bleed colour fields stacked vertically; the hero is a 1.25fr / 1fr grid (copy left, illustrated stage right with the timer card overlapping the coach). Sets are a three-column row (200px scene, title, note) under a 6px plum rule; moves are a two-column grid with 48px column gap and 4px top rules; nag stages are four across. Spacing rhythm: 10, 16, 28, 56, 96px. At 760px and below everything collapses to one column, the coach illustration is hidden and the timer card goes full width, nag stages go to two, and step numerals shrink from 4.4rem to 3rem.
+Single column inside a 1040px wrapper with 16px side gutters. Sections are full-bleed colour fields stacked vertically; the hero is a 1.25fr / 1fr grid (copy left, stage right) where the stage stacks the sunflower disc (up to 430px) and the timer card (64% of the stage, up to 290px) in one centred grid cell so the card sits over the disc. Sets are a three-column row (270px bar, title, note) under a 6px plum rule; moves are a two-column grid with 48px column gap and 4px top rules; nag stages are four across. Spacing rhythm: 10, 16, 28, 56, 96px. At 760px and below everything collapses to one column, the hero disc is hidden and the timer card goes full width, set rows stack (the bar stays above its title), nag stages go to two, and step numerals shrink from 4.4rem to 3rem.
 
-Sections join through skewed tri-stripe seams (44px tall, skewY -2.2deg, coral / sunflower / teal thirds, reversed on alternate joins) and a 64px bleed pseudo-element so fields overlap without gaps. The same coral / sunflower / teal stripe caps the nag panel.
+Sections join through skewed tri-stripe seams (44px tall, skewY -2.2deg, coral / sunflower / teal thirds, reversed on alternate joins) and a 64px bleed pseudo-element so fields overlap without gaps. The nag panel carries a 14px stripe cap of coral / sunflower / paper.
 
 ## Elevation & Depth
 
-Flat colour fields and flat illustration carry the structure; depth appears only as soft, offset drop shadows under objects that look lifted off the page and tilted.
+Flat colour fields and flat graphic devices carry the structure; depth appears only as soft, offset drop shadows under objects that look lifted off the page and tilted.
 
 ### Shadow Vocabulary
-- **Lift** (`box-shadow: 6px 8px 14px rgba(18,10,15,.4)`): the primary button at rest; grows to `8px 12px 18px` on hover, shrinks to `3px 4px 8px` when pressed.
+- **Lift** (`box-shadow: 6px 8px 14px rgba(42,22,50,.4)`): the primary button at rest; grows to `8px 12px 18px` on hover, shrinks to `3px 4px 8px` when pressed.
 - **Card** (`box-shadow: 8px 12px 22px rgba(42,22,50,.28)`): the paper timer card.
-- **Ground** (`opacity .18` plum ellipse): the coach illustration's floor shadow.
 
 ### Named Rules
-**The Lifted-Object Rule.** Shadows go under tilted or skewed objects only. Flat fields, rules, text blocks and illustration figures stay shadowless.
+**The Lifted-Object Rule.** Shadows go under tilted or skewed objects only. Flat fields, rules, text blocks, the hero disc and the cadence bars stay shadowless.
 
 ## Shapes
 
-Square by default: radius 0 on every button, panel and code block. The single exception is the paper timer card at 18px, the one soft object, framed by a 3px plum border. Silhouette otherwise comes from skew (-8deg on headlines and buttons), tilt (-3deg timer, 1deg nag panel) and the diagonal stripe seams. Structure is drawn with thick plum rules (3px borders, 4px list rules, 6px set rules). Illustration is built from fat round-capped, round-joined strokes for limbs and torsos, plain circles for heads and hair, flat fills only, in the page palette. The logo is a sunflower parallelogram badge with a plum stroked raised-arm figure.
+Square by default: radius 0 on every button, panel and code block. The single exception is the paper timer card at 18px, the one soft object, framed by a 3px plum border. Silhouette otherwise comes from skew (-8deg on headlines, buttons and cadence bars), tilt (-3deg timer, 1deg nag panel) and the diagonal stripe seams. Structure is drawn with thick plum rules (3px borders, 4px list rules, 6px set rules). Two geometric devices recur. The sunflower disc is a full circle cut by four horizontal coral stripes that thicken toward the bottom (7, 11, 15, 20px), wrapped by a dotted teal ring (7px round-capped dots on a 14px gap), like a retro sunset poster. The cadence bar is a 46px skewed slab whose length is the cadence. The logo is a sunflower parallelogram badge with a plain bold plum "P" drawn as a round-capped, round-joined stroke; the favicon is the same mark.
 
 ## Components
 
@@ -175,19 +186,22 @@ Square by default: radius 0 on every button, panel and code block. The single ex
 - **Alt:** transparent, plum text, 3px plum border, no shadow, sits beside primary (10px gap, stacks with 14px gap on mobile).
 
 ### Timer Card (signature)
-Paper card, 18px corners, 3px plum border, tilted -3deg with the Card shadow, overlapping the coach illustration. A small uppercase menu row over a 3px plum rule, a giant Anybody phase word, a deep-teal clock (tabular numerals), a shout line and a small note. On each phase change it jolts (0.5s scale and skew settle); reduced-motion users get a static card.
+Paper card, 18px corners, 3px plum border, tilted -3deg with the Card shadow, centred over the sunflower disc. A small uppercase menu row over a 3px plum rule, a giant Anybody phase word, a deep-teal clock (tabular numerals), a shout line and a small note. On each phase change it jolts (0.5s scale and skew settle); reduced-motion users get a static card.
 
-### Illustration
-Hero coach (raised arm, headband, leg warmers) and three 220x180 scenes (hunched sit, tall stand at a raised desk, striding walk) on a plum ground line. Each has a role and aria-label. Palette only: plum, coral, sunflower, teal, paper plus skin tones.
+### Sunflower Disc
+Decorative hero backdrop, hidden from assistive tech: a sunflower circle with four coral cut-stripes across its lower half and a dotted deep-teal ring just inside the rim. Palette only, flat fills, no shadow. Hidden at 760px and below so the timer stays in the first screen.
+
+### Cadence Bars
+Each set row leads with a 46px bar skewed -8deg, hidden from assistive tech, sized to the default cadence against the full column: Sit is a full-width plum bar (35 min), Stand is a 49% deep-teal bar (17 min), Walk is a full-width run of coral stripes (14px on, 14px off), a dashed line for the hourly reminder. A new set type gets a new bar proportional to its minutes, in a palette colour.
 
 ### Code Blocks
 Code Plum fill, 3px sunflower border, paper 15px monospace, no radius, horizontal scroll. A sunflower copy button sits top-right (uppercase 12px label, paper on hover), label flips to "copied".
 
 ### Set List and Moves
-Rows divided by thick plum top rules; Anybody italic titles with plain 700-weight notes at 30 to 36ch.
+Rows divided by thick plum top rules; a cadence bar, then Anybody italic titles with plain 700-weight notes at 30 to 36ch.
 
 ### Nag Panel
-Plum panel tilted 1deg, topped by the tri-stripe: sunflower title, four stages each under a 4px coral rule with a paper caps label.
+Plum panel tilted 1deg, topped by a coral / sunflower / paper stripe: sunflower title, four stages each under a 4px coral rule with a paper caps label.
 
 ### Navigation
 Brand badge plus uppercase 0.85rem links at weight 700; hover is a 3px underline with 5px offset. Wraps rather than collapsing.
@@ -201,20 +215,20 @@ Native details/summary with 4px plum rules; summaries are Anybody italic caps 1.
 - **Do** drench each section in one field colour (coral #ef6a50, sunflower #f5c23e, deep teal #17757a, or plum ink #2a1632) with the text colours of The Plum Text Rule.
 - **Do** set display type in Anybody 900 italic caps and skew headlines -8deg.
 - **Do** keep corners square and draw structure with 3 to 6px plum rules; the 18px paper card is the only rounded object.
-- **Do** draw new illustration as flat SVG with round-capped strokes in the page palette, with a role and aria-label.
+- **Do** build graphic devices from flat palette shapes (discs, stripes, dots, skewed slabs) and mark them aria-hidden when decorative.
+- **Do** size cadence bars to the real minutes, and keep the numbers beside them true.
 - **Do** join fields with the tri-stripe seam, flipping its order on alternate joins.
 - **Do** keep focus rings 4px: plum on light fields, sunflower on ink.
 - **Do** write copy in a shouting coach voice, and keep real facts real.
 - **Do** honour prefers-reduced-motion by stopping the demo loop, jolt and button transitions.
 
 ### Don't:
-- **Don't** add neon, glow, haze, synthwave grids or gradients inside illustration; the world is flat and warm.
+- **Don't** add neon, glow, haze, synthwave grids or soft gradients; stripes are hard-stop only and the world is flat and warm.
 - **Don't** round corners or soften buttons into pills.
 - **Don't** set text in Anybody upright or light, or in lowercase.
-- **Don't** put shadows under flat fields, text blocks or illustration figures.
+- **Don't** put shadows under flat fields, text blocks, the disc or the cadence bars.
 - **Don't** reach for calm wellness-app teal-and-white surfaces; teal here is a saturated field with white text.
 
 ### Not canonized (defects the build carries)
 - Emoji faces (U+1F615 family) as the nag-stage icons are glyph icons; do not reuse them as an icon system.
-- The Lift shadow still uses the old ink rgba(18,10,15) rather than plum rgba(42,22,50); colour drift, not a second ink.
-- The footer's secondary copy and `.req` text hard-code #fff3e0 instead of var(--paper); same colour, untokenized.
+- The code block fill #1c0e22 and the logo/favicon hex values are hard-coded rather than tokenized; same palette, untokenized.

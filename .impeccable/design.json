@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T12:00:00Z",
+  "generatedAt": "2026-11-20T18:00:00Z",
   "title": "Design System: PostureCoach",
   "extensions": {
     "colorMeta": {
@@ -118,18 +118,13 @@
     "shadows": [
       {
         "name": "lift",
-        "value": "6px 8px 14px rgba(18,10,15,.4)",
+        "value": "6px 8px 14px rgba(42,22,50,.4)",
         "purpose": "Primary button at rest; 8px 12px 18px on hover, 3px 4px 8px pressed."
       },
       {
         "name": "card",
         "value": "8px 12px 22px rgba(42,22,50,.28)",
         "purpose": "Tilted paper timer card."
-      },
-      {
-        "name": "ground",
-        "value": "plum ellipse, opacity .18",
-        "purpose": "Floor shadow under the hero coach illustration."
       }
     ],
     "motion": [
@@ -158,7 +153,7 @@
       "refersTo": "button-primary",
       "description": "Skewed plum slab with sunflower shout text; the one install action.",
       "html": "<a class=\"ds-btn\" href=\"#\">Get your workout</a>",
-      "css": ".ds-btn{display:inline-block;background:#2a1632;color:#f5c23e;padding:16px 30px;font:900 italic 1.1rem/1 Anybody,sans-serif;text-transform:uppercase;text-decoration:none;transform:skewX(-8deg);box-shadow:6px 8px 14px rgba(18,10,15,.4);transition:transform .15s cubic-bezier(.2,.8,.2,1),box-shadow .15s}.ds-btn:hover{transform:skewX(-8deg) translate(-2px,-3px);box-shadow:8px 12px 18px rgba(18,10,15,.45)}.ds-btn:active{transform:skewX(-8deg) translate(2px,3px);box-shadow:3px 4px 8px rgba(18,10,15,.4)}.ds-btn:focus-visible{outline:4px solid #2a1632;outline-offset:3px}"
+      "css": ".ds-btn{display:inline-block;background:#2a1632;color:#f5c23e;padding:16px 30px;font:900 italic 1.1rem/1 Anybody,sans-serif;text-transform:uppercase;text-decoration:none;transform:skewX(-8deg);box-shadow:6px 8px 14px rgba(42,22,50,.4);transition:transform .15s cubic-bezier(.2,.8,.2,1),box-shadow .15s}.ds-btn:hover{transform:skewX(-8deg) translate(-2px,-3px);box-shadow:8px 12px 18px rgba(42,22,50,.45)}.ds-btn:active{transform:skewX(-8deg) translate(2px,3px);box-shadow:3px 4px 8px rgba(42,22,50,.4)}.ds-btn:focus-visible{outline:4px solid #2a1632;outline-offset:3px}"
     },
     {
       "name": "Alt Button",
@@ -179,16 +174,23 @@
     {
       "name": "Set Row",
       "kind": "custom",
-      "description": "Thick-ruled class row: flat scene illustration, huge italic title, small sub-line, plain note.",
-      "html": "<div class=\"ds-set\"><div class=\"ds-big\">Stand<small>about 17 min</small></div><p>Up on your feet.</p></div>",
-      "css": ".ds-set{display:grid;grid-template-columns:1.3fr 1fr;gap:8px 28px;align-items:baseline;border-top:6px solid #2a1632;padding:18px 0 22px;background:#f5c23e;color:#2a1632}.ds-big{font:900 italic 4rem/.95 Anybody,sans-serif;text-transform:uppercase}.ds-big small{font-size:1.6rem;display:block;letter-spacing:.02em}.ds-set p{margin:0;font-weight:700;max-width:30ch}"
+      "description": "Thick-ruled class row: cadence bar, huge italic title, small sub-line, plain note.",
+      "html": "<div class=\"ds-set\"><div class=\"ds-bar ds-stand\" aria-hidden=\"true\"></div><div class=\"ds-big\">Stand<small>about 17 min</small></div><p>Up on your feet.</p></div>",
+      "css": ".ds-set{display:grid;grid-template-columns:270px 1.2fr 1fr;gap:8px 28px;align-items:center;border-top:6px solid #2a1632;padding:18px 0 22px;background:#f5c23e;color:#2a1632}.ds-bar{height:46px;transform:skewX(-8deg)}.ds-stand{width:49%;background:#17757a}.ds-big{font:900 italic 4rem/.95 Anybody,sans-serif;text-transform:uppercase}.ds-big small{font-size:1.6rem;display:block;letter-spacing:.02em}.ds-set p{margin:0;font-weight:700;max-width:30ch}"
     },
     {
-      "name": "Scene Illustration",
+      "name": "Cadence Bars",
       "kind": "custom",
-      "description": "Flat SVG scene: round-capped strokes, flat fills, page palette, plum ground line.",
-      "html": "<svg class=\"ds-scene\" viewBox=\"0 0 220 180\" role=\"img\" aria-label=\"Person striding\"><path d=\"M10 172H210\" stroke=\"#2a1632\" stroke-width=\"4\" stroke-linecap=\"round\"/><g fill=\"none\" stroke-linecap=\"round\"><path d=\"M98 108 84 140 62 156\" stroke=\"#c98660\" stroke-width=\"15\"/><path d=\"M101 58 98 106\" stroke=\"#17757a\" stroke-width=\"32\"/></g><circle cx=\"104\" cy=\"34\" r=\"17\" fill=\"#c98660\"/><path d=\"M88 32Q104 22 120 32\" fill=\"none\" stroke=\"#ef6a50\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>",
-      "css": ".ds-scene{display:block;width:100%;max-width:230px;background:#f5c23e}"
+      "description": "Skewed bars sized to the default cadence: 35 min sit in plum, 17 min stand in teal, hourly walk as dashed coral stripes.",
+      "html": "<div class=\"ds-bars\"><div class=\"ds-bar ds-sit\"></div><div class=\"ds-bar ds-stand\"></div><div class=\"ds-bar ds-walk\"></div></div>",
+      "css": ".ds-bars{display:grid;gap:14px;background:#f5c23e;padding:18px;max-width:270px}.ds-bar{height:46px;transform:skewX(-8deg)}.ds-sit{width:100%;background:#2a1632}.ds-stand{width:49%;background:#17757a}.ds-walk{width:100%;background:repeating-linear-gradient(90deg,#ef6a50 0 14px,transparent 14px 28px)}"
+    },
+    {
+      "name": "Sunflower Disc",
+      "kind": "custom",
+      "description": "Retro hero backdrop: sunflower circle, four coral cut-stripes thickening downward, dotted teal ring.",
+      "html": "<svg class=\"ds-disc\" viewBox=\"0 0 300 300\" aria-hidden=\"true\"><circle cx=\"150\" cy=\"150\" r=\"148\" fill=\"#f5c23e\"/><g fill=\"#ef6a50\"><rect x=\"0\" y=\"176\" width=\"300\" height=\"7\"/><rect x=\"0\" y=\"202\" width=\"300\" height=\"11\"/><rect x=\"0\" y=\"232\" width=\"300\" height=\"15\"/><rect x=\"0\" y=\"268\" width=\"300\" height=\"20\"/></g><circle cx=\"150\" cy=\"150\" r=\"142\" fill=\"none\" stroke=\"#17757a\" stroke-width=\"7\" stroke-dasharray=\"2 14\" stroke-linecap=\"round\"/></svg>",
+      "css": ".ds-disc{display:block;width:100%;max-width:300px;background:#ef6a50}"
     },
     {
       "name": "Code Block",
@@ -209,18 +211,18 @@
       "name": "Nag Panel",
       "kind": "card",
       "refersTo": "nag-panel",
-      "description": "Tilted plum panel with a tri-stripe cap, sunflower title and coral-ruled stages.",
+      "description": "Tilted plum panel with a coral / sunflower / paper stripe cap, sunflower title and coral-ruled stages.",
       "html": "<div class=\"ds-nag\"><h3>It nags. It really nags.</h3><div class=\"ds-stage\"><b>8 min</b>You really should switch now.</div></div>",
-      "css": ".ds-nag{background:#2a1632;color:#fff;padding:28px 24px 26px;transform:rotate(1deg);max-width:420px}.ds-nag:before{content:'';display:block;height:14px;margin:-28px -24px 20px;background:linear-gradient(90deg,#ef6a50 0 33.3%,#f5c23e 0 66.6%,#17757a 0)}.ds-nag h3{font:900 italic 1.9rem/1 Anybody,sans-serif;text-transform:uppercase;margin:0 0 14px;color:#f5c23e}.ds-stage{border-top:4px solid #ef6a50;padding-top:10px;font-size:.95rem}.ds-stage b{display:block;color:#fff3e0;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}"
+      "css": ".ds-nag{background:#2a1632;color:#fff;padding:28px 24px 26px;transform:rotate(1deg);max-width:420px}.ds-nag:before{content:'';display:block;height:14px;margin:-28px -24px 20px;background:linear-gradient(90deg,#ef6a50 0 33.3%,#f5c23e 0 66.6%,#fff3e0 0)}.ds-nag h3{font:900 italic 1.9rem/1 Anybody,sans-serif;text-transform:uppercase;margin:0 0 14px;color:#f5c23e}.ds-stage{border-top:4px solid #ef6a50;padding-top:10px;font-size:.95rem}.ds-stage b{display:block;color:#fff3e0;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}"
     }
   ],
   "narrative": {
     "northStar": "The Instructor With a Whistle",
-    "overview": "The page is a 1982 aerobics class redrawn as a flat picture book, and the app is the instructor shouting the set list. Each section is a field of one warm colour (coral, sunflower or deep teal), set in extra-wide italic caps, with hard plum rules and skewed type that leans forward like a body mid-lunge. Authored flat SVG figures (a coach in leg warmers, and sit / stand / walk scenes) carry the story instead of effects. It is loud but friendly, and it refuses the calm teal wellness-app page and the neon-sign page.\n\nDensity is generous at the section level (56px top, 96px bottom padding per field) and tight inside it: big type, short lines, one idea per row. Energy comes from slant (skewX -8deg), tilt (rotate -3deg and 1deg) and diagonal tri-stripe seams, never from glow or haze.\n\nThe build keeps a few cooler-than-brand details: the code block fill (#1c0e22) is a one-off darker plum and the illustration skin tones (#c98660, #f0c4a0, #8d5a3b) live only inside the SVGs.",
+    "overview": "The page is a 1982 aerobics class redrawn as a flat picture book, and the app is the instructor shouting the set list. Each section is a field of one warm colour (coral, sunflower or deep teal), set in extra-wide italic caps, with hard plum rules and skewed type that leans forward like a body mid-lunge. Pure graphic devices carry the story instead of effects: a retro sunflower disc cut with coral stripes behind the live timer, and skewed bars in the set list whose lengths are the real cadence. It is loud but friendly, and it refuses the calm teal wellness-app page and the neon-sign page.\n\nDensity is generous at the section level (56px top, 96px bottom padding per field) and tight inside it: big type, short lines, one idea per row. Energy comes from slant (skewX -8deg), tilt (rotate -3deg and 1deg) and diagonal tri-stripe seams, never from glow or haze.\n\nThe build keeps one cooler-than-brand detail: the code block fill (#1c0e22) is a one-off darker plum.",
     "keyCharacteristics": [
-      "Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; no gradients except the tri-stripe seam.",
+      "Three flat colour fields (coral, sunflower, deep teal) plus a plum-ink field; gradients are hard-stop stripes only (the seam, the nag cap, the walk bar).",
       "One display face, all caps, italic, weight 900, skewed.",
-      "Hand-drawn-feel flat SVG illustration: round-capped strokes, flat fills, no outlines or gradients, drawn from the page palette.",
+      "Geometric graphic devices in the page palette: the striped sunflower disc and the cadence bars. Flat fills, no outlines, no soft gradients.",
       "Square corners everywhere except one soft 18px paper timer card; 3 to 6px plum rules as the structural line.",
       "Live demo timer is the hero proof; copy is coach-voice, shouted."
     ],
@@ -242,7 +244,7 @@
       },
       {
         "name": "The Lifted-Object Rule",
-        "body": "Shadows go under tilted or skewed objects only. Flat fields, rules, text blocks and illustration figures stay shadowless.",
+        "body": "Shadows go under tilted or skewed objects only. Flat fields, rules, text blocks, the hero disc and the cadence bars stay shadowless.",
         "section": "elevation"
       }
     ],
@@ -250,17 +252,18 @@
       "Do drench each section in one field colour (coral #ef6a50, sunflower #f5c23e, deep teal #17757a, or plum ink #2a1632) with the text colours of The Plum Text Rule.",
       "Do set display type in Anybody 900 italic caps and skew headlines -8deg.",
       "Do keep corners square and draw structure with 3 to 6px plum rules; the 18px paper card is the only rounded object.",
-      "Do draw new illustration as flat SVG with round-capped strokes in the page palette, with a role and aria-label.",
+      "Do build graphic devices from flat palette shapes (discs, stripes, dots, skewed slabs) and mark them aria-hidden when decorative.",
+      "Do size cadence bars to the real minutes, and keep the numbers beside them true.",
       "Do join fields with the tri-stripe seam, flipping its order on alternate joins.",
       "Do keep focus rings 4px: plum on light fields, sunflower on ink.",
       "Do write copy in a shouting coach voice, and keep real facts real.",
       "Do honour prefers-reduced-motion by stopping the demo loop, jolt and button transitions."
     ],
     "donts": [
-      "Don't add neon, glow, haze, synthwave grids or gradients inside illustration; the world is flat and warm.",
+      "Don't add neon, glow, haze, synthwave grids or soft gradients; stripes are hard-stop only and the world is flat and warm.",
       "Don't round corners or soften buttons into pills.",
       "Don't set text in Anybody upright or light, or in lowercase.",
-      "Don't put shadows under flat fields, text blocks or illustration figures.",
+      "Don't put shadows under flat fields, text blocks, the disc or the cadence bars.",
       "Don't reach for calm wellness-app teal-and-white surfaces; teal here is a saturated field with white text."
     ]
   }
