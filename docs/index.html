@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostureCoach</title>
+<meta name="description" content="A macOS menu bar app that coaches you through sit, stand and stretch breaks to help manage lower back pain.">
+<meta name="theme-color" content="#f7f8f5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='11' fill='%23ad4f2c'/%3E%3Cpath d='M18 36V13h9.5a7 7 0 0 1 0 14H18' fill='none' stroke='%23fff' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Anybody";font-style:normal;font-weight:100 900;font-display:swap;src:url("assets/fonts/anybody-latin.woff2") format("woff2")}
+@font-face{font-family:"Anybody";font-style:italic;font-weight:100 900;font-display:swap;src:url("assets/fonts/anybody-italic-latin.woff2") format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("assets/fonts/hanken-grotesk-latin.woff2") format("woff2")}
+:root{--coral:#ef7a63;--terra:#ad4f2c;--azul:#2d63a8;--field:#24507f;--sage:#e4ebe1;--sage-d:#6f9272;--sage-l:#cfe0cb;--ink:#1b3556;--navy:#14283f;--ground:#f7f8f5;--card:#fff;--paper:#f3f6f1;--muted:#55677f;--line:rgba(27,53,86,.22);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px;scrollbar-color:var(--azul) var(--ground)}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sage-l);color:var(--ink)}
+a{color:var(--azul);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.dark :focus-visible,.teal :focus-visible{outline-color:var(--sage-l)}
+p{text-wrap:pretty}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.display{font-family:"Anybody",sans-serif;font-style:italic;font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:0;margin:0;text-wrap:balance}
+h2.display{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+
+.field{padding:88px 0}
+.tint{background:var(--sage)}
+.teal{background:var(--field);color:#fff}
+.ink{background:var(--navy);color:var(--paper)}
+.teal a,.ink a{color:var(--sage-l)}
+
+/* nav */
+nav{display:flex;align-items:center;gap:8px 26px;flex-wrap:wrap;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;color:var(--ink);font:700 italic 1.05rem/1 "Anybody",sans-serif;text-transform:uppercase}
+.brand svg{width:34px;height:34px;flex:none}
+nav a:not(.brand){color:var(--muted);font-weight:600;text-decoration:none;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+nav a:not(.brand):hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;gap:48px;grid-template-columns:1.1fr 1fr;align-items:center;padding:56px 0 96px}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5rem);line-height:.98}
+.hero h1 span{display:block}
+.hero h1 span+span{color:var(--terra)}
+.lede{max-width:36ch;font-size:1.2rem;color:var(--muted);margin:24px 0 32px}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 26px;font:700 italic .95rem/1 "Anybody",sans-serif;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;border:1.5px solid var(--ink);transition:background-color .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--azul);border-color:var(--azul)}
+.btn:active{background:#1f4d87;border-color:#1f4d87}
+.btn.alt{background:transparent;color:var(--ink);margin-left:10px}
+.btn.alt:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.stage{display:grid;place-items:center}
+.sun{grid-area:1/1;width:min(100%,380px)}
+.timer{grid-area:1/1;width:min(68%,270px);background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:20px 20px 16px;box-shadow:0 18px 36px -18px rgba(27,53,86,.45)}
+.timer .menu{font:600 .72rem/1 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--line)}
+.timer .phase{font:700 italic 2rem/1 "Anybody",sans-serif;text-transform:uppercase;margin:16px 0 4px}
+.timer .clock{font:700 italic 1.9rem/1 "Anybody",sans-serif;font-variant-numeric:tabular-nums;color:var(--azul)}
+.timer .shout{font-weight:600;margin:14px 0 0;min-height:3.2em;font-size:.95rem}
+.timer .note{font-size:.78rem;color:var(--muted);margin:8px 0 0}
+.timer.swap .phase,.timer.swap .shout{animation:swap .35s cubic-bezier(.25,1,.5,1)}
+@keyframes swap{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* set list */
+.sets{list-style:none;margin:40px 0 0;padding:0}
+.sets li{display:grid;grid-template-columns:240px minmax(0,1.1fr) minmax(0,1fr);gap:8px 32px;align-items:center;border-top:1.5px solid var(--ink);padding:26px 0 28px}
+.sets li:last-child{border-bottom:1.5px solid var(--ink)}
+/* bar widths follow the default cadence: 35 min sit, 17 min stand, hourly stretch */
+.bar{height:22px}
+.bar.sit{width:100%;background:var(--ink)}
+.bar.stand{width:49%;background:var(--sage-d)}
+.bar.stretch{width:100%;background:repeating-linear-gradient(90deg,var(--coral) 0 6px,transparent 6px 14px)}
+.sets .big{font:700 italic clamp(1.9rem,4.2vw,2.8rem)/1 "Anybody",sans-serif;text-transform:uppercase}
+.sets .big small{display:block;margin-top:8px;font:500 .9rem/1.3 "Hanken Grotesk",sans-serif;text-transform:none;color:var(--muted)}
+.sets p{margin:0;max-width:30ch}
+.sets .fine{display:block;margin-top:4px;font-size:.88rem;color:var(--muted)}
+
+/* moves */
+.moves{display:grid;gap:0 56px;grid-template-columns:1fr 1fr;margin:40px 0 0}
+.move{padding:22px 0 26px;border-top:1px solid rgba(255,255,255,.3)}
+.move h3{font:700 italic 1.05rem/1.2 "Anybody",sans-serif;text-transform:uppercase;margin:0 0 8px;color:#fff}
+.move p{margin:0;max-width:38ch;color:#e4ecf6}
+.nag{margin:48px 0 0;background:var(--navy);border-radius:14px;padding:32px 32px 30px}
+.nag h3{font:700 italic 1.25rem/1.1 "Anybody",sans-serif;text-transform:uppercase;margin:0 0 8px;color:var(--sage-l)}
+.nag>p{margin:0;max-width:56ch;color:var(--paper)}
+.nag ol{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+.nag li{border-top:1px solid rgba(243,246,241,.3);padding-top:16px;font-size:.92rem;color:var(--paper)}
+.nag .face{display:block;width:40px;height:40px;margin-bottom:10px}
+.nag b{display:block;color:var(--coral);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+
+/* install */
+.ink h2{color:#fff}
+.steps{list-style:none;counter-reset:s;padding:0;margin:36px 0 0;display:grid;gap:28px}
+.steps>li{counter-increment:s;display:grid;grid-template-columns:56px minmax(0,1fr);gap:6px 20px}
+.steps>li::before{content:counter(s);font:700 italic 2.2rem/1 "Anybody",sans-serif;color:var(--coral)}
+.steps p{margin:0 0 10px;font-weight:600}
+.code{position:relative;background:#0e1d30;border:1px solid rgba(243,246,241,.2);border-radius:8px;color:var(--paper);padding:16px 92px 16px 18px;font:500 14.5px/1.55 ui-monospace,Menlo,monospace;overflow-x:auto;white-space:pre}
+.code button{position:absolute;top:10px;right:10px;background:transparent;color:var(--paper);border:1px solid rgba(243,246,241,.4);border-radius:6px;padding:6px 12px;cursor:pointer;font:600 .72rem/1 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;transition:background-color .2s,color .2s}
+.code button:hover{background:var(--paper);color:var(--ink)}
+.req{margin:36px 0 0;color:#d5deea;max-width:62ch;font-size:.95rem}
+
+/* faq + footer */
+.faq details{max-width:720px}
+details{border-top:1.5px solid var(--ink)}
+details:last-of-type{border-bottom:1.5px solid var(--ink)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:700 italic 1rem/1.3 "Anybody",sans-serif;text-transform:uppercase}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 1.4rem/1 "Hanken Grotesk",sans-serif;color:var(--azul);transition:transform .2s cubic-bezier(.25,1,.5,1)}
+details[open] summary::after{transform:rotate(45deg)}
+summary:hover{color:var(--azul)}
+details p{margin:0 0 22px;max-width:60ch;color:var(--muted)}
+code{font:500 .9em ui-monospace,Menlo,monospace;background:rgba(27,53,86,.08);padding:1px 5px;border-radius:4px}
+footer{background:var(--navy);color:#d5deea;padding:36px 0 48px;font-size:.88rem}
+footer .display{color:#fff;font-size:1.05rem;margin-bottom:8px}
+footer a{color:var(--sage-l)}
+
+@media (max-width:760px){
+ .field{padding:64px 0}
+ .hero{grid-template-columns:1fr;gap:36px;padding:32px 0 64px}
+ .sun{display:none}
+ .timer{width:100%}
+ .btn.alt{margin:12px 0 0}
+ .sets li{grid-template-columns:1fr;gap:14px;padding:22px 0}
+ .moves{grid-template-columns:1fr}
+ .nag{padding:26px 22px}
+ .nag ol{grid-template-columns:1fr 1fr}
+ .steps>li{grid-template-columns:36px minmax(0,1fr);gap:6px 12px}
+ .steps>li::before{font-size:1.7rem}
+ .code{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px 16px 54px}
+ .code button{top:auto;bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.timer.swap .phase,.timer.swap .shout{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="mark" viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="11" fill="#ad4f2c"/><path d="M18 36V13h9.5a7 7 0 0 1 0 14H18" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+</svg>
+
+<header>
+<div class="wrap">
+<nav>
+<a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg>PostureCoach</a>
+<a href="#class">The class</a><a href="#moves">The moves</a><a href="#install">Get it</a><a href="#faq">FAQ</a><a href="https://github.com/jessicadowney/PostureCoach">GitHub</a>
+</nav>
+<div class="hero" id="top">
+<div>
+<h1 class="display"><span>Stand</span><span>up!</span></h1>
+<p class="lede">Your back is not a chair. PostureCoach lives in your Mac menu bar and drags you through sit, stand and stretch breaks, all day.</p>
+<a class="btn" href="#install">Get your workout</a><a class="btn alt" href="https://github.com/jessicadowney/PostureCoach">See the code</a>
+</div>
+<div class="stage">
+<svg class="sun" viewBox="0 0 300 300" aria-hidden="true">
+<circle cx="150" cy="150" r="148" fill="#ef7a63"/>
+<g fill="#f7f8f5"><rect x="0" y="182" width="300" height="5"/><rect x="0" y="206" width="300" height="8"/><rect x="0" y="234" width="300" height="11"/><rect x="0" y="268" width="300" height="16"/></g>
+</svg>
+<div class="timer" id="timer" role="img" aria-label="Demo of the PostureCoach countdown cycling through sit, stand and stretch phases">
+<div class="menu">Demo, sped up</div>
+<p class="phase" id="phase">Sit</p>
+<div class="clock" id="clock">35:00</div>
+<p class="shout" id="shout">Sit tight, champion. Posture on.</p>
+<p class="note">The real app counts in real minutes.</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<section class="field tint" id="class">
+<div class="wrap">
+<h2 class="display">Today's class</h2>
+<ul class="sets">
+<li><div class="bar sit" aria-hidden="true"></div><div class="big">Sit<small>about 35 min · 30 to 45</small></div><p>Get some work done. We time it, you don't have to.</p></li>
+<li><div class="bar stand" aria-hidden="true"></div><div class="big">Stand<small>about 17 min · 15 to 20</small></div><p>Up on your feet. <span class="fine">Pain mode shortens it to 10 minutes.</span></p></li>
+<li><div class="bar stretch" aria-hidden="true"></div><div class="big">Stretch<small>every hour</small></div><p>A stretch reminder once an hour. Your hamstrings will thank you.</p></li>
+</ul>
+</div>
+</section>
+
+<section class="field teal" id="moves">
+<div class="wrap">
+<h2 class="display">The moves</h2>
+<div class="moves">
+<div class="move"><h3>Menu bar only</h3><p>No Dock icon. The phase and a countdown sit up top, out of your way.</p></div>
+<div class="move"><h3>Three cues</h3><p>Different sounds for stand up, sit down and stretch, picked from the macOS system sounds.</p></div>
+<div class="move"><h3>Out loud</h3><p>Optional spoken reminders. One toggle in the menu if the office isn't ready.</p></div>
+<div class="move"><h3>Teams-aware</h3><p>In a Microsoft Teams meeting it stays quiet: no speech, but you still get the banner and the chime.</p></div>
+<div class="move"><h3>English and French</h3><p>French (France) is built in, picked up from your system language, with a manual override.</p></div>
+<div class="move"><h3>Starts at login</h3><p>A launchd LaunchAgent starts it with your Mac. Nothing to remember.</p></div>
+</div>
+<div class="nag">
+<h3>It nags. It really nags.</h3>
+<p>Ignore a switch and the menu bar face gets more upset the longer you stay put. One click clears it.</p>
+<ol aria-label="Nag stages">
+<li><svg class="face" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ef7a63"/><g fill="#14283f" stroke="#14283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="17" r="2" stroke="none"/><circle cx="26" cy="17" r="2" stroke="none"/><path d="M14 27Q20 24 26 27" fill="none"/></g></svg><b>3 min overdue</b>Still haven't switched?</li>
+<li><svg class="face" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ef7a63"/><g fill="#14283f" stroke="#14283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="18" r="2" stroke="none"/><circle cx="26" cy="18" r="2" stroke="none"/><path d="M10 12 17 14M30 12 23 14M14 28Q20 23 26 28" fill="none"/></g></svg><b>8 min</b>You really should switch now.</li>
+<li><svg class="face" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ef7a63"/><g fill="#14283f" stroke="#14283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="18" r="2.4" stroke="none"/><circle cx="26" cy="18" r="2.4" stroke="none"/><path d="M9 11 17 15M31 11 23 15M12 28Q16 25 20 28T28 28" fill="none"/></g></svg><b>15 min</b>This is a repeat nudge — please switch.</li>
+<li><svg class="face" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ef7a63"/><g fill="#14283f" stroke="#14283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17 17 19M30 17 23 19M9 10 17 14M31 10 23 14" fill="none"/><ellipse cx="20" cy="29" rx="4.5" ry="3.8" stroke="none"/><circle cx="32" cy="24" r="2.4" fill="#f3f6f1" stroke="none"/></g></svg><b>25 min</b>It's been a while. Your back will thank you for moving.</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="field ink dark" id="install">
+<div class="wrap">
+<h2 class="display">Get your workout</h2>
+<ol class="steps">
+<li><div><p>Grab the repo.</p>
+<div class="code">git clone https://github.com/jessicadowney/PostureCoach.git
+cd PostureCoach<button type="button" data-copy aria-label="Copy command">copy</button></div></div></li>
+<li><div><p>Drop the app in Applications.</p>
+<div class="code">mv PostureCoach.app /Applications/<button type="button" data-copy aria-label="Copy command">copy</button></div></div></li>
+<li><div><p>Run the installer. If Gatekeeper blocks a double-click, use Terminal.</p>
+<div class="code">bash "Install PostureCoach.command"<button type="button" data-copy aria-label="Copy command">copy</button></div></div></li>
+</ol>
+<p class="req">Needs macOS 10.13+ and Python 3. The installer finds Python, installs the <a href="https://github.com/jaredks/rumps">rumps</a> menu bar library, and registers the login item.</p>
+</div>
+</section>
+
+<section class="field" id="faq">
+<div class="wrap faq">
+<h2 class="display" style="margin-bottom:28px">Cool-down</h2>
+<details><summary>What does the installer change?</summary><p>It installs <code>rumps</code> for your Python 3, pins that interpreter in the app launcher, and adds one LaunchAgent so the app starts at login. It's a short shell script in the repo, so read it first.</p></details>
+<details><summary>Why does macOS block the installer?</summary><p>The app isn't signed or notarized yet, so Gatekeeper is cautious. Running it with <code>bash</code> in Terminal gets around the prompt.</p></details>
+<details><summary>Is this medical advice?</summary><p>No. It's a movement reminder. If pain is severe, radiates down your leg, causes numbness or weakness, or lasts more than a couple of weeks, see a clinician or physical therapist.</p></details>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<p class="display">PostureCoach</p>
+<p>MIT License · <a href="https://github.com/jessicadowney/PostureCoach">GitHub</a> · A movement reminder, not medical advice.</p>
+</div>
+</footer>
+
+<script>
+(function(){
+  // Demo loop: 1 real minute plays as 1 second, so sit (35 min) lasts 35 s.
+  var phases=[
+    {n:"Sit",min:35,s:"Sit tight, champion. Posture on."},
+    {n:"Stand",min:17,s:"Up! Up! Up! Your chair is not your friend."},
+    {n:"Stretch",min:3,s:"Stretch it out. Hamstrings, baby."}
+  ];
+  var el=document.getElementById("timer"),ph=document.getElementById("phase"),ck=document.getElementById("clock"),sh=document.getElementById("shout");
+  var i=0,left=phases[0].min*60;
+  var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+  function show(){ph.textContent=phases[i].n;sh.textContent=phases[i].s;ck.textContent=fmt(left)}
+  show();
+  if(!still)setInterval(function(){
+    left-=60;
+    if(left<0){i=(i+1)%phases.length;left=phases[i].min*60;el.classList.remove("swap");void el.offsetWidth;el.classList.add("swap")}
+    show();
+  },1000);
+  document.querySelectorAll("[data-copy]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var t=b.parentNode.firstChild.textContent;
+      (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent="copied";setTimeout(function(){b.textContent="copy"},1500)},function(){b.textContent="select + cmd C"});
+    });
+  });
+})();
+</script>
+</body>
+</html>

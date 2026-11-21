@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T00:03:34Z",
+  "title": "Design System: PostureCoach",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#f7f8f5",
+        "tonalRamp": [
+          "#313231",
+          "#636362",
+          "#949593",
+          "#c6c6c4",
+          "#f7f8f5",
+          "#f9faf8",
+          "#fbfcfa",
+          "#fdfdfc"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Azul Ink",
+        "canonical": "#1b3556",
+        "tonalRamp": [
+          "#050b11",
+          "#0b1522",
+          "#102034",
+          "#162a45",
+          "#1b3556",
+          "#546880",
+          "#8d9aaa",
+          "#c6ccd5"
+        ]
+      },
+      "azul": {
+        "role": "primary",
+        "displayName": "Azul",
+        "canonical": "#2d63a8",
+        "tonalRamp": [
+          "#091422",
+          "#122843",
+          "#1b3b65",
+          "#244f86",
+          "#2d63a8",
+          "#628abe",
+          "#96b1d4",
+          "#cad8e9"
+        ]
+      },
+      "field-azul": {
+        "role": "primary",
+        "displayName": "Field Azul",
+        "canonical": "#24507f",
+        "tonalRamp": [
+          "#071019",
+          "#0e2033",
+          "#16304c",
+          "#1d4066",
+          "#24507f",
+          "#5b7c9f",
+          "#92a8bf",
+          "#c8d3df"
+        ]
+      },
+      "terracotta": {
+        "role": "secondary",
+        "displayName": "Terracotta",
+        "canonical": "#ad4f2c",
+        "tonalRamp": [
+          "#231009",
+          "#452012",
+          "#682f1a",
+          "#8a3f23",
+          "#ad4f2c",
+          "#c27b61",
+          "#d6a796",
+          "#ead3ca"
+        ]
+      },
+      "coral": {
+        "role": "secondary",
+        "displayName": "Coral",
+        "canonical": "#ef7a63",
+        "tonalRamp": [
+          "#301814",
+          "#603128",
+          "#8f493b",
+          "#bf624f",
+          "#ef7a63",
+          "#f39b8a",
+          "#f7bcb1",
+          "#fbded8"
+        ]
+      },
+      "sage": {
+        "role": "tertiary",
+        "displayName": "Sage",
+        "canonical": "#6f9272",
+        "tonalRamp": [
+          "#161d17",
+          "#2c3a2e",
+          "#435844",
+          "#59755b",
+          "#6f9272",
+          "#93ad95",
+          "#b7c8b8",
+          "#dbe4dc"
+        ]
+      },
+      "sage-tint": {
+        "role": "tertiary",
+        "displayName": "Sage Tint",
+        "canonical": "#e4ebe1",
+        "tonalRamp": [
+          "#2e2f2d",
+          "#5b5e5a",
+          "#898d87",
+          "#b6bcb4",
+          "#e4ebe1",
+          "#ebf0e8",
+          "#f2f5f0",
+          "#f8faf8"
+        ]
+      },
+      "sage-light": {
+        "role": "tertiary",
+        "displayName": "Sage Light",
+        "canonical": "#cfe0cb",
+        "tonalRamp": [
+          "#292d29",
+          "#535a51",
+          "#7c867a",
+          "#a6b3a2",
+          "#cfe0cb",
+          "#dbe8d8",
+          "#e7f0e5",
+          "#f3f7f2"
+        ]
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "Navy",
+        "canonical": "#14283f",
+        "tonalRamp": [
+          "#04080d",
+          "#081019",
+          "#0c1826",
+          "#102032",
+          "#14283f",
+          "#4f5e6f",
+          "#8a949f",
+          "#c4c9cf"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#55677f",
+        "tonalRamp": [
+          "#111519",
+          "#222933",
+          "#333e4c",
+          "#445266",
+          "#55677f",
+          "#808d9f",
+          "#aab3bf",
+          "#d4d9df"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f3f6f1",
+        "tonalRamp": [
+          "#313130",
+          "#616260",
+          "#929491",
+          "#c2c5c1",
+          "#f3f6f1",
+          "#f6f8f4",
+          "#f9faf8",
+          "#fcfdfc"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#333333",
+          "#666666",
+          "#999999",
+          "#cccccc",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "code-navy": {
+        "role": "neutral",
+        "displayName": "Code Navy",
+        "canonical": "#0e1d30",
+        "tonalRamp": [
+          "#03060a",
+          "#060c13",
+          "#08111d",
+          "#0b1726",
+          "#0e1d30",
+          "#4a5664",
+          "#868e98",
+          "#c3c6cb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero 'Stand up!' only; second line terracotta."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Move cards, nag heading, FAQ summaries, brand name."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs at 30 to 62ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, timer menu row, stage tags, copy button."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Install commands."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 18px 36px -18px rgba(27,53,86,.45)",
+        "purpose": "The white timer card only; the one shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "swap",
+        "value": "350ms cubic-bezier(.25,1,.5,1): opacity 0 to 1, translateY 5px to 0",
+        "purpose": "Timer phase and shout when the demo phase changes; disabled under reduced motion."
+      },
+      {
+        "name": "colour-fade",
+        "value": "200ms",
+        "purpose": "Button and copy-button colour changes."
+      },
+      {
+        "name": "plus-turn",
+        "value": "200ms cubic-bezier(.25,1,.5,1)",
+        "purpose": "FAQ plus icon rotates 45deg when open."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square azul-ink slab; hover is a colour change only.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Get your workout</a>",
+      "css": ".ds-btn{display:inline-block;background:#1b3556;color:#f3f6f1;padding:14px 26px;font:700 italic .95rem/1 Anybody,sans-serif;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;border:1.5px solid #1b3556;transition:background-color .2s,color .2s,border-color .2s}.ds-btn:hover{background:#2d63a8;border-color:#2d63a8}.ds-btn:active{background:#1f4d87;border-color:#1f4d87}.ds-btn:focus-visible{outline:2px solid #2d63a8;outline-offset:3px}"
+    },
+    {
+      "name": "Alt Button",
+      "kind": "button",
+      "refersTo": "button-alt",
+      "description": "Outlined sibling for secondary actions.",
+      "html": "<a class=\"ds-btn-alt\" href=\"#\">See the code</a>",
+      "css": ".ds-btn-alt{display:inline-block;background:transparent;color:#1b3556;padding:14px 26px;font:700 italic .95rem/1 Anybody,sans-serif;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;border:1.5px solid #1b3556;transition:background-color .2s,color .2s}.ds-btn-alt:hover{background:#1b3556;color:#f3f6f1}.ds-btn-alt:focus-visible{outline:2px solid #2d63a8;outline-offset:3px}"
+    },
+    {
+      "name": "Timer Card",
+      "kind": "card",
+      "refersTo": "timer-card",
+      "description": "Untilted white live-demo card with the one soft shadow: phase, clock, coach shout.",
+      "html": "<div class=\"ds-timer\"><div class=\"ds-menu\">Demo, sped up</div><p class=\"ds-phase\">Stand</p><div class=\"ds-clock\">17:00</div><p class=\"ds-shout\">Up! Up! Up! Your chair is not your friend.</p></div>",
+      "css": ".ds-timer{background:#fff;color:#1b3556;border:1.5px solid #1b3556;border-radius:14px;padding:20px 20px 16px;box-shadow:0 18px 36px -18px rgba(27,53,86,.45);max-width:270px}.ds-menu{font:600 .72rem/1 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#55677f;padding-bottom:12px;border-bottom:1px solid rgba(27,53,86,.22)}.ds-phase{font:700 italic 2rem/1 Anybody,sans-serif;text-transform:uppercase;margin:16px 0 4px}.ds-clock{font:700 italic 1.9rem/1 Anybody,sans-serif;font-variant-numeric:tabular-nums;color:#2d63a8}.ds-shout{font-weight:600;font-size:.95rem;margin:14px 0 0}"
+    },
+    {
+      "name": "Set Row",
+      "kind": "custom",
+      "description": "Hairline-ruled class row on sage tint: cadence bar, italic title, sub-line, note.",
+      "html": "<div class=\"ds-set\"><div class=\"ds-bar\"></div><div class=\"ds-big\">Stand<small>about 17 min · 15 to 20</small></div><p>Up on your feet.</p></div>",
+      "css": ".ds-set{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px 24px;align-items:center;border-top:1.5px solid #1b3556;border-bottom:1.5px solid #1b3556;padding:26px 0 28px;background:#e4ebe1;color:#1b3556}.ds-bar{height:22px;width:49%;background:#6f9272}.ds-big{font:700 italic 2rem/1 Anybody,sans-serif;text-transform:uppercase}.ds-big small{display:block;margin-top:8px;font:500 .9rem/1.3 'Hanken Grotesk',sans-serif;text-transform:none;color:#55677f}.ds-set p{margin:0;max-width:30ch}"
+    },
+    {
+      "name": "Cadence Bars",
+      "kind": "custom",
+      "description": "Unskewed 22px bars sized to the default cadence: 35 min sit in ink, 17 min stand in sage, hourly stretch as coral dashes.",
+      "html": "<div class=\"ds-bars\"><div class=\"ds-sit\"></div><div class=\"ds-stand\"></div><div class=\"ds-stretch\"></div></div>",
+      "css": ".ds-bars{display:grid;gap:14px;background:#e4ebe1;padding:18px;max-width:280px}.ds-bars>div{height:22px}.ds-sit{width:100%;background:#1b3556}.ds-stand{width:49%;background:#6f9272}.ds-stretch{width:100%;background:repeating-linear-gradient(90deg,#ef7a63 0 6px,transparent 6px 14px)}"
+    },
+    {
+      "name": "Hero Disc",
+      "kind": "custom",
+      "description": "Coral circle cut by four ground-coloured stripes thickening downward; no ring.",
+      "html": "<svg class=\"ds-disc\" viewBox=\"0 0 300 300\" aria-hidden=\"true\"><circle cx=\"150\" cy=\"150\" r=\"148\" fill=\"#ef7a63\"/><g fill=\"#f7f8f5\"><rect x=\"0\" y=\"182\" width=\"300\" height=\"5\"/><rect x=\"0\" y=\"206\" width=\"300\" height=\"8\"/><rect x=\"0\" y=\"234\" width=\"300\" height=\"11\"/><rect x=\"0\" y=\"268\" width=\"300\" height=\"16\"/></g></svg>",
+      "css": ".ds-disc{display:block;width:100%;max-width:280px}"
+    },
+    {
+      "name": "Nag Panel",
+      "kind": "card",
+      "refersTo": "nag-panel",
+      "description": "Flat navy panel with a sage-light title and coral-faced stages.",
+      "html": "<div class=\"ds-nag\"><h3>It nags. It really nags.</h3><div class=\"ds-stage\"><svg viewBox=\"0 0 40 40\" width=\"40\" height=\"40\" aria-hidden=\"true\"><circle cx=\"20\" cy=\"20\" r=\"18\" fill=\"#ef7a63\"/><circle cx=\"14\" cy=\"18\" r=\"2\" fill=\"#14283f\"/><circle cx=\"26\" cy=\"18\" r=\"2\" fill=\"#14283f\"/><path d=\"M14 28Q20 23 26 28\" fill=\"none\" stroke=\"#14283f\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg><b>8 min</b>You really should switch now.</div></div>",
+      "css": ".ds-nag{background:#14283f;color:#f3f6f1;border-radius:14px;padding:32px 32px 30px;max-width:340px}.ds-nag h3{font:700 italic 1.25rem/1.1 Anybody,sans-serif;text-transform:uppercase;margin:0 0 16px;color:#cfe0cb}.ds-stage{border-top:1px solid rgba(243,246,241,.3);padding-top:16px;font-size:.92rem}.ds-stage svg{display:block;margin-bottom:10px}.ds-stage b{display:block;color:#ef7a63;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "Paper-on-navy install command with an outlined copy button.",
+      "html": "<div class=\"ds-code\">bash \"Install PostureCoach.command\"<button type=\"button\" class=\"ds-copy\">copy</button></div>",
+      "css": ".ds-code{position:relative;background:#0e1d30;border:1px solid rgba(243,246,241,.2);border-radius:8px;color:#f3f6f1;padding:16px 92px 16px 18px;font:500 14.5px/1.55 ui-monospace,Menlo,monospace;overflow-x:auto;white-space:pre}.ds-copy{position:absolute;top:10px;right:10px;background:transparent;color:#f3f6f1;border:1px solid rgba(243,246,241,.4);border-radius:6px;padding:6px 12px;cursor:pointer;font:600 .72rem/1 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.08em;transition:background-color .2s,color .2s}.ds-copy:hover{background:#f3f6f1;color:#1b3556}.ds-copy:focus-visible{outline:2px solid #cfe0cb;outline-offset:3px}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "description": "Muted uppercase label link; hover darkens to ink.",
+      "html": "<a class=\"ds-nav\" href=\"#\">The moves</a>",
+      "css": ".ds-nav{color:#55677f;font:600 .82rem 'Hanken Grotesk',sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}.ds-nav:hover{color:#1b3556}.ds-nav:focus-visible{outline:2px solid #2d63a8;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Timetable",
+    "overview": "The page is a class timetable printed in azul ink on near-white paper. The coach-voice copy still does the shouting; the design stays calm and lets the words and one live timer carry the energy. Colour is divided by job: azul for ink, links and the one deep field; sage for the quiet \"today's class\" band; navy for the dark closing sections; and a small warm group of coral and terracotta that appears only on the hero disc, the \"UP!\" word, the logo badge, the nag faces, step numerals and the stretch dashes.\n\nDensity is generous at section level (88px top and bottom, 64px on mobile) and plain inside it: one 960px column, short lines, thin rules. Everything loud was removed on purpose. There are no tilts, skews, stripe seams, heavy rules or hard shadows, and section edges are straight. The only motion is a 350ms fade-and-rise on the timer when the demo phase changes.",
+    "keyCharacteristics": [
+      "Near-white ground with azul-ink text; sage tint, azul and navy are the three section fields.",
+      "Warm colour is rationed: coral and terracotta are accents and graphic marks, never fields.",
+      "One display face (Anybody, italic caps, weight 700) at modest sizes; Hanken Grotesk 17px for everything else.",
+      "Hairline structure: 1 to 1.5px rules and borders, square buttons, one soft 14px card radius for the timer and nag panel.",
+      "Flat graphic devices (coral disc cut by ground-coloured stripes, cadence bars, round nag faces) in palette colours only."
+    ],
+    "rules": [
+      {
+        "name": "The Warm Ration Rule",
+        "body": "Coral and terracotta are marks, not fields. Coral is for graphic shapes and small labels; terracotta is for the logo and one headline word. If a surface is larger than a disc or a line of type, it is azul, sage or navy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-and-Ground Rule",
+        "body": "Text on the light grounds is Azul Ink or Muted Slate. On Field Azul and Navy it is white or Paper, with Sage Light for links and headings. Azul text is for links and the clock only.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Display Face Rule",
+        "body": "Anything set in Anybody is italic, caps and weight 700, and stays at or below 5rem. Upright, light or heavier cuts are not part of the system.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Shadow Rule",
+        "body": "The timer card is the only object that casts a shadow. Buttons, panels, bars and fields stay flat; state is shown by colour change.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the ground near-white (#f7f8f5) and set text in Azul Ink (#1b3556), with Muted Slate (#55677f) for secondary copy.",
+      "**Do** give each large section one field: sage tint, Field Azul or Navy; leave the hero and FAQ on the ground.",
+      "**Do** keep terracotta (#ad4f2c) to the logo badge and the \"UP!\" word, and coral (#ef7a63) to the disc, nag faces, step numerals, stage labels and stretch dashes.",
+      "**Do** set display type in Anybody 700 italic caps, no larger than 5rem.",
+      "**Do** draw structure with 1 to 1.5px rules and keep buttons square with 1.5px borders and a colour-only hover.",
+      "**Do** build graphic devices from flat palette shapes and mark them aria-hidden when decorative.",
+      "**Do** size cadence bars to the real minutes, and keep the numbers beside them true.",
+      "**Do** keep focus rings 2px with 3px offset: Azul on light grounds, Sage Light on Field Azul and Navy.",
+      "**Do** honour prefers-reduced-motion by stopping the demo loop, the phase fade and all transitions."
+    ],
+    "donts": [
+      "**Don't** tilt, skew or rotate content, or join sections with stripes, seams or diagonal edges; section edges are straight.",
+      "**Don't** use heavy rules (over 1.5px), hard offset shadows, glow, haze or neon.",
+      "**Don't** fill a section with coral or terracotta, or set body text in them.",
+      "**Don't** add motion beyond the 350ms phase fade and the 200ms colour and plus-icon transitions.",
+      "**Don't** set Anybody upright, light, heavier than 700 or in lowercase.",
+      "**Don't** round buttons into pills or add radii beyond 6, 8 and 14px."
+    ]
+  }
+}
